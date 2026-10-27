@@ -55,4 +55,4 @@ node tests/smoke.js        # headless-Chrome UI smoke test (raw CDP, /opt/meta-c
 
 ## Status
 
-Factory run #158 (18:00 slot, 2026-10-27). See `TEST_RESULTS.md` for the real test output of this build.
+Factory run #159 (18:00 slot, 2026-10-27). See `TEST_RESULTS.md` for the real test output of this build.
