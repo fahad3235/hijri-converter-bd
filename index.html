@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hijri Converter BD</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <h1 data-i18n="title">Hijri Converter BD</h1>
+    <p class="tagline" data-i18n="tagline">Gregorian &#8596; Hijri date converter (tabular calendar)</p>
+  </div>
+  <div class="lang-switch" role="group" aria-label="Language">
+    <button id="langEn" type="button" class="active">EN</button>
+    <button id="langBn" type="button">&#2476;&#2494;&#2434;&#2482;&#2494;</button>
+  </div>
+</header>
+
+<main>
+  <section class="card today-card">
+    <h2 data-i18n="todayTitle">Today (tabular)</h2>
+    <p id="todayLine" class="big">&#8212;</p>
+    <p class="muted" data-i18n="todayNote">Tabular date from your device clock. Real dates may differ by one day (moon sighting).</p>
+  </section>
+
+  <div class="cols">
+    <section class="card">
+      <h2 data-i18n="g2hTitle">Gregorian &#8594; Hijri</h2>
+      <label><span data-i18n="g2hLabel">Gregorian date</span>
+        <input id="gDate" type="date" min="1900-01-01" max="2100-12-31">
+      </label>
+      <div class="btn-row">
+        <button id="g2hBtn" type="button" data-i18n="convert">Convert</button>
+        <button id="todayBtn" type="button" class="secondary" data-i18n="todayBtn">Today</button>
+      </div>
+      <p id="g2hError" class="error" style="display:none"></p>
+      <p id="g2hResult" class="result"></p>
+      <p class="muted" data-i18n="emptyG">Pick a Gregorian date and press Convert.</p>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="h2gTitle">Hijri &#8594; Gregorian</h2>
+      <div class="field-row">
+        <label><span data-i18n="hDay">Day</span>
+          <input id="hDay" type="number" min="1" max="30" placeholder="1">
+        </label>
+        <label><span data-i18n="hMonth">Month</span>
+          <select id="hMonth"></select>
+        </label>
+        <label><span data-i18n="hYear">Hijri year</span>
+          <input id="hYear" type="number" min="1318" max="1520" placeholder="1448">
+        </label>
+      </div>
+      <div class="btn-row">
+        <button id="h2gBtn" type="button" data-i18n="convert">Convert</button>
+      </div>
+      <p id="h2gError" class="error" style="display:none"></p>
+      <p id="h2gResult" class="result"></p>
+      <p class="muted" data-i18n="emptyH">Enter a Hijri date and press Convert.</p>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2 id="gridTitle" data-i18n="gridTitle">Hijri month calendar</h2>
+    <div class="field-row">
+      <label><span data-i18n="hMonth">Month</span>
+        <select id="gridMonth"></select>
+      </label>
+      <label><span data-i18n="gridYear">Hijri year</span>
+        <input id="gridYear" type="number" min="1318" max="1520">
+      </label>
+      <button id="gridBtn" type="button" data-i18n="show">Show</button>
+    </div>
+    <p id="gridError" class="error" style="display:none"></p>
+    <div id="gridBody"></div>
+  </section>
+
+  <section class="card">
+    <h2 data-i18n="yearTitle">Hijri year at a glance</h2>
+    <div class="field-row">
+      <label><span data-i18n="yearLabel">Hijri year</span>
+        <input id="yearView" type="number" min="1318" max="1520">
+      </label>
+      <button id="yearBtn" type="button" data-i18n="show">Show</button>
+    </div>
+    <p id="yearError" class="error" style="display:none"></p>
+    <div id="yearBody"></div>
+  </section>
+
+  <footer class="card muted">
+    <p data-i18n="disclaimer">Tabular dates are approximate: the real Hijri date in Bangladesh depends on moon sighting and may differ by one day. Always confirm Ramadan and Eid dates from official announcements. This is a personal calculation tool, not a religious authority.</p>
+  </footer>
+</main>
+
+<script src="js/logic.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
